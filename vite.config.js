@@ -1,14 +1,18 @@
-export default {
-    base: './', // Establece el base path como ruta relativa
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import { defineConfig } from 'vite';
 
-    build: {
-      rollupOptions: {
-        input: {
-          // main: 'main.js', // Ruta al archivo de entrada principal de tu aplicación
-          // reticulas: 'reticulas.html', // Ruta al archivo reticulas.html
-          index: 'index.html' // Ruta al archivo reticulas.html
-        },
-      }
-    }
-  };
-  
+export default defineConfig({
+  base: './',
+  build: {
+    rollupOptions: {
+      input: {
+        index: 'index.html'
+      },
+    },
+  },
+  plugins: [
+    ViteImageOptimizer({
+      /* pass your config */
+    }),
+  ],
+});
