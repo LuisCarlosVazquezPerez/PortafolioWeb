@@ -6,7 +6,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        index: 'index.html'
+        index: 'index.html',
+        certificados: 'certificados.html',
+        portafolio: 'portafolio.html',
+        aboutme: 'aboutme.html',
       },
     },
   },

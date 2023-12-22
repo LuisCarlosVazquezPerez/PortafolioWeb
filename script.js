@@ -3,13 +3,13 @@ var Messenger = function(el) {
     var m = this;
 
     m.init = function() {
-        m.codeletters = "&#*+%?£@§$";
+        m.codeletters = "&#*11:11?£@§$";
         m.message = 0;
         m.current_length = 0;
         m.fadeBuffer = false;
         m.messages = [
-            'Desarollador Web',
-            'Ingeniero En Sistemas'
+            'Desarrollador Web',
+            'Ingeniero en Sistemas'
         ];
 
         setTimeout(m.animateIn, 100);
