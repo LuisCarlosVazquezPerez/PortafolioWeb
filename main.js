@@ -16,9 +16,10 @@ import {
   Collapse,
   Select,
   Ripple,
+  Lightbox,
 } from "tw-elements";
 
-initTE({ Input, Select, Collapse, Ripple });
+initTE({ Input, Select, Collapse, Ripple, Lightbox });
 
 
 import AOS from 'aos';
