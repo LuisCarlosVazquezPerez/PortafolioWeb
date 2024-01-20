@@ -11,6 +11,7 @@ import './script'
 
 // Initialization for ES Users
 import {
+  Modal,
   Input,
   initTE,
   Collapse,
@@ -19,7 +20,8 @@ import {
   Lightbox,
 } from "tw-elements";
 
-initTE({ Input, Select, Collapse, Ripple, Lightbox });
+initTE({Modal, Input, Select, Collapse, Ripple, Lightbox });
+
 
 
 import AOS from 'aos';
