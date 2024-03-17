@@ -1260,3 +1260,27 @@
       transform: rotateZ(65deg) translateY(-35px);
   }
 }
+
+
+/* Personaliza la barra de desplazamiento completa */
+::-webkit-scrollbar {
+    width: 11px; /* Ancho del scrollbar */
+    height: 11px; /* Altura del scrollbar para desplazamiento horizontal */
+}
+
+/* Personaliza el fondo de la barra de desplazamiento (la pista) */
+::-webkit-scrollbar-track {
+    background: white; /* Color de fondo */
+}
+
+/* Personaliza el indicador de desplazamiento (el pulgar) */
+::-webkit-scrollbar-thumb {
+    background: #3B82F6; /* Color del pulgar */
+    border-radius: 6px;
+}
+
+/* Personaliza el estado hover del indicador de desplazamiento */
+::-webkit-scrollbar-thumb:hover {
+  background: #1E40AF; /* Color del pulgar */
+}
+
