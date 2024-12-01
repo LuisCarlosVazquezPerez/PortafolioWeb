@@ -8,8 +8,9 @@ var Messenger = function(el) {
         m.current_length = 0;
         m.fadeBuffer = false;
         m.messages = [
-            'Desarrollador Web',
-            'Ingeniero en Sistemas'
+            'Ingeniero en Sistemas',
+            'Desarrollo de Aplicaciones',
+            'Redes'
         ];
 
         setTimeout(m.animateIn, 100);
