@@ -222,10 +222,10 @@
           <div>
             <div class="flex justify-center items-center h-auto">
               <picture class="w-1/2">
-                <source srcset="img/luisnewaviff.avif" type="image/avif" />
-                <source srcset="img/luisnewwebp.webp" type="image/webp" />
+                <source srcset="/img/luisnewaviff.avif" type="image/avif" />
+                <source srcset="/img/luisnewwebp.webp" type="image/webp" />
                 <img
-                  src="img/luisnewpng.png"
+                  src="/img/luisnewpng.png"
                   loading="lazy"
                   alt="FOTO PERSONAL"
                   data-aos="fade-left"
@@ -242,7 +242,7 @@
             <div class="slide-track">
               <div class="slide flex justify-content-center items-center">
                 <img
-                  src="./img/logos/paqueteoffice.png"
+                  src="/img/logos/paqueteoffice.png"
                   height="90"
                   width="90"
                   alt="Logos"
@@ -250,7 +250,7 @@
               </div>
               <div class="slide flex justify-content-center items-center">
                 <img
-                  src="./img/logos/excel.png"
+                  src="/img/logos/excel.png"
                   height="90"
                   width="90"
                   alt="Logos"
@@ -1209,6 +1209,34 @@
         </div>
       </footer>
     </div>
+
+    
     <script type="module" src="main.js"></script>
+    <script>
+      //MODAL
+      const now = new Date().getTime();
+      const lastShown = localStorage.getItem("welcomeLastShown");
+      const oneMinute = 11 * 60 * 1000;
+
+      const shouldShowModal =
+        !lastShown || now - parseInt(lastShown) > oneMinute;
+
+      if (shouldShowModal) {
+        document.getElementById("welcomeModal").style.display = "flex";
+      } else {
+        document.getElementById("welcomeModal").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+      }
+
+      document
+        .getElementById("acceptBtn")
+        .addEventListener("click", function () {
+          localStorage.setItem("welcomeLastShown", new Date().getTime());
+          document.getElementById("welcomeModal").style.display = "none";
+          document.getElementById("mainContent").style.display = "block";
+        });
+    </script>
+
+
   </body>
 </html>
