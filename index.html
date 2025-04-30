@@ -1210,10 +1210,9 @@
         </div>
       </footer>
     </div>
-
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script>
-      //MODAL
       const now = new Date().getTime();
       const lastShown = localStorage.getItem("welcomeLastShown");
       const oneMinute = 11 * 60 * 1000;
@@ -1223,20 +1222,51 @@
 
       if (shouldShowModal) {
         document.getElementById("welcomeModal").style.display = "flex";
+        document.body.style.overflow = "hidden"; // Evita scroll mientras está el modal
       } else {
         document.getElementById("welcomeModal").style.display = "none";
-        document.getElementById("mainContent").style.display = "block";
+        document.body.style.overflow = "auto";
       }
 
       document
         .getElementById("acceptBtn")
         .addEventListener("click", function () {
           localStorage.setItem("welcomeLastShown", new Date().getTime());
+
+          const defaults = {
+            spread: 360,
+            ticks: 50,
+            gravity: 0,
+            decay: 0.94,
+            startVelocity: 30,
+            shapes: ["star"],
+            colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
+          };
+
+          function shoot() {
+            confetti({
+              ...defaults,
+              particleCount: 40,
+              scalar: 1.2,
+              shapes: ["star"],
+            });
+
+            confetti({
+              ...defaults,
+              particleCount: 10,
+              scalar: 0.75,
+              shapes: ["circle"],
+            });
+          }
+
+          setTimeout(shoot, 0);
+          setTimeout(shoot, 100);
+          setTimeout(shoot, 200);
+
+          // Ocultar modal
           document.getElementById("welcomeModal").style.display = "none";
-          document.getElementById("mainContent").style.display = "block";
+          document.body.style.overflow = "auto";
         });
     </script>
-
-
   </body>
 </html>
