@@ -2,6 +2,57 @@
   display: none;
 }
 
+#welcomeModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#welcomeContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#mainContent {
+  display: none;
+  padding: 2rem;
+}
+
+.handy-button {
+  position: relative;
+  display: inline-block;
+}
+
+.hand-icon {
+  position: absolute;
+  top: 50%;
+  left: 95%; /* La mano estará a la izquierda del botón */
+  transform: translateY(-50%);
+  font-size: 28px;
+  animation: wiggle 1s infinite ease-in-out;
+  pointer-events: none;
+  opacity: 1;
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-50%) translateX(-8px);
+  }
+}
+
+
 .toggle {
   position: relative;
   width: 30px;
