@@ -581,13 +581,15 @@
               </div>
 
               <p class="text-center md:text-left lg:text-lg">
-                Soy Luis, Ingeniero en Sistemas Computacionales. Mi camino ha
-                estado lleno de momentos donde he compartido y crecido: desde
-                crear y guiar talleres de programación en mi universidad, hasta
-                enfrentarme a desafíos en múltiples torneos de programación y
-                participar en el Hackathon Banorte 2023. Cada paso refleja mi
-                entusiasmo por la tecnología y mi determinación por evolucionar
-                constantemente como profesional.
+                A lo largo de mi carrera, he tenido la oportunidad de impartir
+                talleres y cursos, además de participar en múltiples torneos de
+                programación y haber concursado en el Hackathon Banorte,
+                experiencias que han fortalecido tanto mis conocimientos
+                técnicos como mis habilidades colaborativas. En mi tiempo libre,
+                disfruto de la compañía de mi familia y amigos, así como de
+                practicar voleibol 🏐 y básquetbol 🏀, actividades que me
+                permiten mantener un buen equilibrio entre lo personal y lo
+                profesional.
               </p>
             </div>
 
@@ -618,10 +620,10 @@
           <h3
             class="font-bold text-4xl text-blue-800 text-center my-3 lg:my-5 lg:text-5xl"
           >
-            Skills
+            Habilidades técnicas
           </h3>
 
-          <a href="certificados.html" class="absolute ml-32 md:ml-36 lg:ml-44">
+          <a href="certificados.html" class="absolute ml-96 lg:ml-[511px]">
             <button
               class="flex items-center justify-center w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-blue-100 transition-colors duration-150 bg-blue-500 rounded-full focus:shadow-outline hover:bg-blue-600"
             >
@@ -1001,13 +1003,18 @@
               />
               <div class="flex-1">
                 <h2 class="text-xl font-semibold text-blue-500 mt-2">
-                  Replica Universidad ITPN
+                  Interfaz Web Optimizada ITPN
                 </h2>
                 <p class="text-gray-600">
-                  Este proyecto fue realizado con propósitos educativos y de
-                  aprendizaje. La réplica ha sido diseñada y desarrollada con el
-                  objetivo de mejorar y practicar habilidades en el ámbito de la
-                  interfaz gráfica y el diseño web.
+                  Este proyecto surge como una solución para optimizar la
+                  presentación institucional del Instituto Tecnológico de
+                  Piedras Negras - TecNM en entornos digitales. La réplica fue
+                  diseñada con un enfoque en la mejora de la experiencia del
+                  usuario, una navegación intuitiva y una estructura visual
+                  moderna, que refleja la identidad y profesionalismo de la
+                  institución. Su desarrollo permitió explorar nuevas propuestas
+                  de interfaz que aportan valor a la comunicación digital
+                  universitaria.
                 </p>
               </div>
 
@@ -1037,13 +1044,17 @@
               />
               <div class="flex-1">
                 <h2 class="text-xl font-semibold text-blue-500 mt-2">
-                  Carrera de Sistemas ITPN
+                  Impulso a la Ingeniería en Sistemas ITPN
                 </h2>
                 <p class="text-gray-600">
-                  Este proyecto busca promover la Ingeniería en Sistemas
-                  Computacionales en el Instituto Tecnológico de Piedras Negras,
-                  resaltando la innovación y oportunidades en el ámbito
-                  tecnológico.
+                  Este proyecto tiene como objetivo promover la carrera de
+                  Ingeniería en Sistemas Computacionales en el Instituto
+                  Tecnológico de Piedras Negras – TecNM, destacando su
+                  relevancia en la innovación tecnológica y el desarrollo de
+                  soluciones digitales. El proyecto es utilizado en ferias y
+                  eventos institucionales como herramienta para atraer nuevos
+                  talentos, mostrando la importancia de la carrera en el entorno
+                  tecnológico actual.
                 </p>
               </div>
 
@@ -1210,10 +1221,9 @@
       </footer>
     </div>
 
-    
     <script type="module" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script>
-      //MODAL
       const now = new Date().getTime();
       const lastShown = localStorage.getItem("welcomeLastShown");
       const oneMinute = 11 * 60 * 1000;
@@ -1223,20 +1233,51 @@
 
       if (shouldShowModal) {
         document.getElementById("welcomeModal").style.display = "flex";
+        document.body.style.overflow = "hidden"; // Evita scroll mientras está el modal
       } else {
         document.getElementById("welcomeModal").style.display = "none";
-        document.getElementById("mainContent").style.display = "block";
+        document.body.style.overflow = "auto";
       }
 
       document
         .getElementById("acceptBtn")
         .addEventListener("click", function () {
           localStorage.setItem("welcomeLastShown", new Date().getTime());
+
+          const defaults = {
+            spread: 360,
+            ticks: 50,
+            gravity: 0,
+            decay: 0.94,
+            startVelocity: 30,
+            shapes: ["star"],
+            colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
+          };
+
+          function shoot() {
+            confetti({
+              ...defaults,
+              particleCount: 40,
+              scalar: 1.2,
+              shapes: ["star"],
+            });
+
+            confetti({
+              ...defaults,
+              particleCount: 10,
+              scalar: 0.75,
+              shapes: ["circle"],
+            });
+          }
+
+          setTimeout(shoot, 0);
+          setTimeout(shoot, 100);
+          setTimeout(shoot, 200);
+
+          // Ocultar modal
           document.getElementById("welcomeModal").style.display = "none";
-          document.getElementById("mainContent").style.display = "block";
+          document.body.style.overflow = "auto";
         });
     </script>
-
-
   </body>
 </html>
